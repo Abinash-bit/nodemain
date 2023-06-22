@@ -16,8 +16,12 @@ if(url === '/message' && method === 'POST'){
     req.on('data', (chunk) => {
        body.push(chunk);
     });
+    req.on('end', () => {
+       const parsedBody = Buffer.concat(body).toString();
+       console.log(parsedBody);
+    })
 
-    
+
    fs.writeFileSync('message.txt','DUMMY');
    res.statusCode = 302;
    res.setHeader('Location', '/');
