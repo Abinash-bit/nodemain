@@ -4,4 +4,4 @@ const server = http.createServer((req, res) => {
     console.log(req);
 });
 
-servererver.listen(3000);
+server.listen(3000);
