@@ -23,8 +23,7 @@ if(url === '/message' && method === 'POST'){
        res.statusCode = 302;
        res.setHeader('Location', '/');
        return res.end();
-    });
-  
+    }); 
 }
 
 res.setHeader('Content-Type', 'text/html');
