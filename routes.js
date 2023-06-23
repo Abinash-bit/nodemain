@@ -33,5 +33,7 @@ const requestHandler = (req, res) => {
     res.write('</html>');
     res.end();
 
-}
+};
+
+module.exports = requestHandler;
 
