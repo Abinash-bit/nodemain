@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js",
-    "start-server":"node app.js"
+    "start": "node app.js",
+    "start-server": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Abinash-bit/nodemain/issues"
   },
-  "homepage": "https://github.com/Abinash-bit/nodemain#readme"
+  "homepage": "https://github.com/Abinash-bit/nodemain#readme",
+  "devDependencies": {
+    "nodemo": "^1.0.0"
+  }
 }
