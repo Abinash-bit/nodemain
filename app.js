@@ -2,9 +2,9 @@
 const express = require('express');
 const app = express();
 
-app.use((req, res, next) => {
+app.use('/add-products', (req, res, next) => {
   console.log('In the middleware!');
-  next();
+  res.send('<h1>The "Add products" page!</h1>');
 });
 
 app.use((req, res, next) => {
