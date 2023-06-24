@@ -13,7 +13,7 @@ const adminRoutes = require('./routes/admin.js');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-
+app.use(adminRoutes);
 
 app.use('/',(req, res, next) => {
   
