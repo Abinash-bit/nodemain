@@ -8,7 +8,8 @@ const bodyParser = require('body-parser');
 const app = express();
 
 
-const adminRoutes = require('./routes/admin.js');
+const adminData = require('./routes/admin');
+
 
 
 const shopRoutes = require('./routes/shop.js');
@@ -20,8 +21,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(adminData.routes);
 
-
 app.use(shopRoutes);
+
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname,'views', '404.html'));
 });
