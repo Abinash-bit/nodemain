@@ -11,7 +11,6 @@ const app = express();
 const adminData = require('./routes/admin');
 
 
-
 const shopRoutes = require('./routes/shop.js');
 
 
