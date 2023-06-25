@@ -1,7 +1,7 @@
 const path = require('path');
 
 const express = require('express');
-
+const adminData = require('./admin');
 
 const router = express.Router();
 
