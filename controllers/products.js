@@ -10,7 +10,7 @@ exports.getAddProduct = (req, res, next) => {
   };
 
   exports.postAddProduct = (req, res, next) => { 
-    const products = adminData.products;
+    
     res.render('shop', {prods: products, pageTitle: 'Shop', path :'/'})
   };
   
