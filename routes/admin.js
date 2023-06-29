@@ -10,7 +10,7 @@ const products = [];
 
 router.get('/add-products', productsController.getAddProduct);
 
-  router.post('/products', productsController.postAddProduct);
+router.post('/products', productsController.postAddProduct);
 
-exports.routes = router;
-exports.products = products;
+
+
