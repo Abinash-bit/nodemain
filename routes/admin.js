@@ -8,7 +8,7 @@ const router = express.Router();
 const products = [];
 
 
-router.get('/add-products', );
+router.get('/add-products', productsController.getAddProduct);
 
   router.post('/products', (req, res, next) => {
     products.push({title: req.body.title});
