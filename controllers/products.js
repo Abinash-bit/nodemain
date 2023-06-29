@@ -12,5 +12,6 @@ exports.postAddProduct =  (req, res, next) => {
 
   (req, res, next) => { 
     const products = adminData.products;
-    res.render('shop', {prods: products, pageTitle: 'Shop', path :'/'});
+    res.render('shop', {prods: products, pageTitle: 'Shop', path :'/'})
+  };
   
