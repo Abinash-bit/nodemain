@@ -1,7 +1,8 @@
    const products = [];
 
   exports.getAddProduct = (req, res, next) => {
-    res.render('add-product', { pageTitle: 'Add Product', path: '/add-products' });
+    res.render('add-product', { pageTitle: 'Add Product', path: '/add-products' 
+  });
   };
  
   exports.postAddProduct =  (req, res, next) => {
