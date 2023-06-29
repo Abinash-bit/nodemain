@@ -10,10 +10,7 @@ const products = [];
 
 router.get('/add-products', productsController.getAddProduct);
 
-  router.post('/products', (req, res, next) => {
-    products.push({title: req.body.title});
-    res.redirect('/');
-  });
+  router.post('/products', productsController.postAddProduct);
 
 exports.routes = router;
 exports.products = products;
