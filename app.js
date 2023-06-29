@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use(adminRoutes.routes);
+app.use(adminRoutes);
 
 app.use(shopRoutes);
 
