@@ -8,6 +8,6 @@ module.exports = class Product {
 
     }
     fetchAll() {
-        return this.products;
+        return products;
     }
 }
