@@ -5,8 +5,13 @@ module.exports = class Product {
         this.title = t;
     }
     save() {
-        products.push(this);
-
+        const p = path.join(path.dirname(process.mainModule.filename),'data','products.json');
+        fs.readFile(p,(err, fileContent) => {
+            let products = [];
+            if(!err) {
+                products = JSON.parse(fileContent);
+            }
+        });
     }
     fetchAll() {
         return products;
