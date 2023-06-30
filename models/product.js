@@ -1,4 +1,4 @@
-
+const fs = require('fs');
 module.exports = class Product {
     constructor(title) {
         this.title = t;
