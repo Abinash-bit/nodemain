@@ -1,4 +1,4 @@
-const products = [];
+
 
 exports.getAddProduct = (req, res, next) => {
   res.render('add-product', {
