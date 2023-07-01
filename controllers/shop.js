@@ -27,8 +27,11 @@ exports.getIndex = (req, res, next) => {
       productCSS: true
     });
   });
-
 };
+
+exports.getCart = (req, res, next) => {
+  
+}
 
 
   
