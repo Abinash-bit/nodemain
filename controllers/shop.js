@@ -15,7 +15,7 @@ exports.getProduct = (req, res, next) => {
   Product.findById(prodId, product => {
     console.log(product);
   })
-  res.redirect('/');
+  
 };
 
 exports.getIndex = (req, res, next) => {
