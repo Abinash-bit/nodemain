@@ -23,7 +23,7 @@ module.exports = class Cart {
                 updatedProduct.qty = updatedProduct.qty + 1;
 
             } else {
-                updatedProduct = 
+                updatedProduct = { id: id, qty: 1};
             }
 
         });
