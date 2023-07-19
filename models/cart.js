@@ -25,10 +25,11 @@ module.exports = class Cart {
 
             } else {
                 updatedProduct = { id: id, qty: 1};
+                cart.products = [ ...cart.products, updatedProduct];
             }
 
             cart.totalPrice = cart.totalPrice + productPrice;
-            cart.products = [ ...cart.products];
+            
 
         });
         
