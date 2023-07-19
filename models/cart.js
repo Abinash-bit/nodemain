@@ -15,9 +15,15 @@ module.exports = class Cart {
             if(!err) {
                 cart = JSON.parse(fileContent);
             }
+            // Analyze the cart => Find existing product
+            const existingProduct = cart.products.find(prod => prod.id === id);
+            if(existingProduct) {
+                
+            }
+
         });
-        // Analyze the cart => Find existing product
         
+
         // Add new product/ increase
 
     }
