@@ -22,6 +22,8 @@ module.exports = class Cart {
                 updatedProduct = { ...existingProduct };
                 updatedProduct.qty = updatedProduct.qty + 1;
 
+            } else {
+                updatedProduct = 
             }
 
         });
