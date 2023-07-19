@@ -26,6 +26,8 @@ module.exports = class Cart {
                 updatedProduct = { id: id, qty: 1};
             }
 
+            cart.totalPrice = cart.totalPrice + productPrice;
+
         });
         
 
