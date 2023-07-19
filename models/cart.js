@@ -14,11 +14,10 @@ module.exports = class Cart {
             let cart = {products: [], totalPrice: 0}
             if(!err) {
                 cart = JSON.parse(fileContent);
-
             }
-
-        })
+        });
         // Analyze the cart => Find existing product
+        
         // Add new product/ increase
 
     }
