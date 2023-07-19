@@ -28,6 +28,7 @@ module.exports = class Cart {
             }
 
             cart.totalPrice = cart.totalPrice + productPrice;
+            cart.products = [ ...cart.products];
 
         });
         
