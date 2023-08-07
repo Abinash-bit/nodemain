@@ -6,9 +6,9 @@ const mongoConnect = (callback) => {
         'mongodb+srv://abinash-bit:Abinash@cluster0.orm6zuo.mongodb.net/?retryWrites=true&w=majority'
         )
     
-           .then(result => {
+           .then(client => {
             console.log('Connected');
-            callback(result);
+            callback(client);
            })
     
            .catch(err => {
@@ -16,3 +16,4 @@ const mongoConnect = (callback) => {
            });
 };
 
+module.exports = mongoConnect;
