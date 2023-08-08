@@ -1,13 +1,14 @@
 const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 
-const mongoConnect = () => {
+const mongoConnect = (callback) => {
   MongoClient.connect(
     'mongodb+srv://abinash-bit:Abinash@cluster0.orm6zuo.mongodb.net/?retryWrites=true&w=majority'
 
 )
   .then(result => {
     console.log('Connected!');
+    callback(result);
   })
   .catch(err => {
     console.log(err);
