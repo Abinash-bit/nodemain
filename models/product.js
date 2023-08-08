@@ -41,7 +41,17 @@ class Product {
 
   static findById(prodId){
     const db = getDb();
-    return db.collection('products').find
+    return db
+    .collection('products')
+    .find({_id: prodId})
+    .next()
+    .then(product => {
+      console.log(product);
+      return product;
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
 
 }
