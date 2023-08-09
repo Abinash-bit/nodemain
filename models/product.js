@@ -14,17 +14,25 @@ class Product {
 
   save(){
     const db = getDb();
-    
-    .insertOne(this)
-    .then(result => {
-      console.log(result);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+    let db0p;
+    if (this._id){
+      //update the product
+      db0p = db.collection('product')
+      .updateOne({_id: new mongodb.ObjectId(this._id)}, {$set: this});
+    }else {
+      db0p = db
+      .collection('products').insertOne(this);
+    }
 
-  }
+    return db0p
+     .then(result => {
+       console.log(result);
+      })
+     .catch(err => {
+       console.log(err);
+     });
 
+    }
   static fetchAll(){
     const db = getDb();
     return db
