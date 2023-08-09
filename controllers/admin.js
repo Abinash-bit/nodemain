@@ -37,8 +37,7 @@ exports.getEditProduct = (req, res, next) => {
   }
   const prodId = req.params.productId;
   Product.findById(prodId)
-    // Product.findById(prodId)
-    .then(products => {
+    .then(product => { // Change 'products' to 'product'
       if (!product) {
         return res.redirect('/');
       }
@@ -52,6 +51,7 @@ exports.getEditProduct = (req, res, next) => {
     .catch(err => console.log(err));
 };
 
+
 exports.postEditProduct = (req, res, next) => {
   const prodId = req.body.productId;
   const updatedTitle = req.body.title;
@@ -62,8 +62,9 @@ exports.postEditProduct = (req, res, next) => {
       const product = new Product(
         updatedTitle, 
         updatedPrice, 
+        updatedDesc,
         updatedImageUrl, 
-        updatedDesc, 
+         
         new ObjectId(prodId)
         );
 
