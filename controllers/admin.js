@@ -1,7 +1,4 @@
-
 const Product = require('../models/product');
-
-
 
 exports.getAddProduct = (req, res, next) => {
   res.render('admin/edit-product', {
@@ -89,11 +86,9 @@ exports.getProducts = (req, res, next) => {
 exports.postDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
   Product.deleteById(prodId)
-    .then(result => {
+    .then(() => {
       console.log('DESTROYED PRODUCT');
       res.redirect('/admin/products');
     })
-
-
     .catch(err => console.log(err));
 };
