@@ -59,22 +59,32 @@ exports.postEditProduct = (req, res, next) => {
   const updatedImageUrl = req.body.imageUrl;
   const updatedDesc = req.body.description;
 
-  const product = new Product(
-    updatedTitle, 
-    updatedPrice, 
-    updatedDesc,
-    updatedImageUrl, 
-    new ObjectId(prodId)
-  );
+  // Assuming your Product model has a findById method
+  Product.findById(prodId)
+    .then(productData => {
+      const product = new Product(updatedTitle, updatedPrice, updatedImageUrl, updatedDesc, new ObjectId(prodID))
 
-  product
-    .save()
+
+      if (!product) {
+        return res.redirect('/admin/products');
+      }
+
+      // Update the product properties
+      product.title = updatedTitle;
+      product.price = updatedPrice;
+      product.imageUrl = updatedImageUrl;
+      product.description = updatedDesc;
+
+      // Save the updated product
+      return product.save();
+    })
     .then(result => {
       console.log('UPDATED PRODUCT');
       res.redirect('/admin/products');
     })
     .catch(err => console.log(err));
 };
+
 
 
 exports.getProducts = (req, res, next) => {
