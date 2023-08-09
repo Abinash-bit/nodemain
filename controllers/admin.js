@@ -57,7 +57,6 @@ exports.postEditProduct = (req, res, next) => {
   const updatedDesc = req.body.description;
   Product.findById(prodId)
     .then(productData => {
-      const product = new Product(updatedTitle, updatedPrice, updatedImageUrl, updatedDesc);
 
       return product.save();
     })
