@@ -76,6 +76,7 @@ exports.postCart = (req, res, next) => {
   .then(result => {
     console.log(result);
   });
+}
 //   let fetchedCart;
 //   let newQuantity = 1;
 //   req.user
