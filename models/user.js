@@ -23,7 +23,7 @@ class User {
     product.quantity = 1;
     const updatedCart = {items: [{...product, quantity: 1}]};
     const db = getDb();
-    db.collection('users').updateOne({});
+    db.collection('users').updateOne({_id: new ObjectId});
 
   }
 
