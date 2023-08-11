@@ -7,6 +7,7 @@ class User {
   constructor(username, email,cart) {
     this.name = username;
     this.email = email;
+    this.cart = cart;
   }
 
   save() {
