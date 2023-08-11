@@ -8,7 +8,7 @@ class User {
     this.name = username;
     this.email = email;
     this.cart = cart;
-    this._id = 
+    this._id = id;
   }
 
   save() {
