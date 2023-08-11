@@ -14,6 +14,10 @@ class User {
     return db.collection('users').insertOne(this);
   }
 
+  addToCart(product){
+
+  }
+
   static findById(userId) {
     const db = getDb();
     return db
