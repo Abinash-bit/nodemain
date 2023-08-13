@@ -21,13 +21,14 @@ class User {
       return cp.productId === product._id;
     });
     let newQuantity = 1;
+    const updatedCartItems = [...this.cart.items];
 
     if (cartProductIndex >= 0){
       newQuantity = this.cart.items[cartProductIndex].quantity + 1;
 
     }
-    const updatedCartItems = [...this.cart.items];
     
+    updatedCartItems
     const updatedCart = {
       items: [{ productId: new ObjectId(product._id), quantity: newQuantity}]
     };
