@@ -90,7 +90,7 @@ class User {
       };
       return db
       .collection('orders')
-      .insertOne(this.cart)
+      .insertOne(order)
     })
     .then(result => {
       this.cart = { items: [] };
