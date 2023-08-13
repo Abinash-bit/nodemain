@@ -80,6 +80,14 @@ class User {
 
   addOrder() {
     const db = getDb();
+    const order = {
+      items: this.cart.items,
+      user: {
+        _id: new ObjectId(this._id),
+        name: this.name,
+        
+      }
+    }
     return db
     .collection('orders')
     .insertOne(this.cart)
