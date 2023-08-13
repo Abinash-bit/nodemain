@@ -20,6 +20,7 @@ class User {
     const cartProduct = this.cart.items.findIndex(cp => {
       return cp.productId === product._id;
     });
+    let newQuantity = 1;
     
     const updatedCart = {
       items: [{ productId: new ObjectId(product._id), quantity: 1}]
