@@ -26,6 +26,7 @@ class User {
       newQuantity = this.cart.items[cartProductIndex].quantity + 1;
 
     }
+    const updatedCartItems = this.cart.items
     
     const updatedCart = {
       items: [{ productId: new ObjectId(product._id), quantity: newQuantity}]
