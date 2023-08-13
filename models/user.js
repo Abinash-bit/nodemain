@@ -33,7 +33,7 @@ class User {
     
     
     const updatedCart = {
-      items: [{ productId: new ObjectId(product._id), quantity: newQuantity}]
+      items: updatedCartItems
     };
     const db = getDb();
     return db
