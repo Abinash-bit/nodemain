@@ -17,13 +17,14 @@ class User {
   }
 
   addToCart(product){
-    const cartProduct = this.cart.items.findIndex(cp => {
+    const cartProductIndex = this.cart.items.findIndex(cp => {
       return cp.productId === product._id;
     });
     let newQuantity = 1;
 
-    if (cartProduct >= 0){
-      
+    if (cartProductIndex >= 0){
+      newQuantity = cartProduct
+
     }
     
     const updatedCart = {
