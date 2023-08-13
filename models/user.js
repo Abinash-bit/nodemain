@@ -54,7 +54,12 @@ class User {
     .toArray().
     then(products => {
       return products.map(p => {
-        return {};
+        return {
+          ...p, 
+          quantity: this.cart.items.find(i => {
+            return i.productId.toString() === p._id.toString();
+          }).quantity 
+        };
       });
     });
 
