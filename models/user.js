@@ -88,10 +88,10 @@ class User {
           name: this.name
         }
       };
+      return db
+      .collection('orders')
+      .insertOne(this.cart)
     });
-    return db
-    .collection('orders')
-    .insertOne(this.cart)
     .then(result => {
       this.cart = { items: [] };
       return db
