@@ -33,3 +33,4 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
+mongoose.connect('mongodb+srv://abinash-bit:Abinash@cluster0.orm6zuo.mongodb.net/shop?retryWrites=true&w=majority')
