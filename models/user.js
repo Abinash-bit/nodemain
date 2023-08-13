@@ -46,6 +46,7 @@ class User {
 
   getCart(){
     const db = getDb();
+    return db.collection('products').find();
 
   }
 
