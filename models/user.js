@@ -79,7 +79,7 @@ class User {
   }
 
   addOrder() {
-    constdb = getdb();
+    const db = getDb();
     return db
     .collection('orders')
     .insertOne(this.cart)
