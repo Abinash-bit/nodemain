@@ -28,7 +28,7 @@ class User {
     }
     
     const updatedCart = {
-      items: [{ productId: new ObjectId(product._id), quantity: 1}]
+      items: [{ productId: new ObjectId(product._id), quantity: newQuantity}]
     };
     const db = getDb();
     return db
