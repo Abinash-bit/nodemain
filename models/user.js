@@ -23,7 +23,7 @@ class User {
     let newQuantity = 1;
 
     if (cartProductIndex >= 0){
-      newQuantity = cartProduct
+      newQuantity = this.cart.items[cartProductIndex].quantity + 1;
 
     }
     
