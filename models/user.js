@@ -25,10 +25,13 @@ class User {
 
     if (cartProductIndex >= 0){
       newQuantity = this.cart.items[cartProductIndex].quantity + 1;
+      updatedCartItems[cartProductIndex].quantity = newQuantity;
 
+    } else {
+      updatedCartItems.push({productId: new ObjectId(product._id), quantity: newQuantity})
     }
     
-    updatedCartItems
+    
     const updatedCart = {
       items: [{ productId: new ObjectId(product._id), quantity: newQuantity}]
     };
