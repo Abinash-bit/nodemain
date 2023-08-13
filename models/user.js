@@ -44,6 +44,10 @@ class User {
 
   }
 
+  grtCart(){
+    
+  }
+
   static findById(userId) {
     const db = getDb();
     return db
