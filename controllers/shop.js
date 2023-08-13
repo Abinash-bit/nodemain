@@ -80,7 +80,7 @@ exports.postCart = (req, res, next) => {
 exports.postCartDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
   req.user
-    .getCart()
+    .deleteItemFromCart()
     .then(cart => {
       return cart.getProducts({ where: { id: prodId } });
     })
