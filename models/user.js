@@ -21,6 +21,10 @@ class User {
       return cp.productId === product._id;
     });
     let newQuantity = 1;
+
+    if (cartProduct >= 0){
+      
+    }
     
     const updatedCart = {
       items: [{ productId: new ObjectId(product._id), quantity: 1}]
