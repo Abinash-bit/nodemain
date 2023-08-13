@@ -103,6 +103,11 @@ class User {
     });
   }
 
+  getOrders(){
+    const db = getDb();
+    return db.collection('orders').find();
+  }
+
   static findById(userId) {
     const db = getDb();
     return db
