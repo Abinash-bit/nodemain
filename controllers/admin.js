@@ -64,19 +64,19 @@ exports.postEditProduct = (req, res, next) => {
     product.price = updatedPrice;
     product.description = updatedDesc;
     product.imageUrl = updatedImageUrl;
-    product
-      .save() 
-  });
-
-
-  product
-    .save()
-    .then(result => {
-      console.log('UPDATED PRODUCT!');
-      res.redirect('/admin/products');
-    })
-    .catch(err => console.log(err));
+    return product.save()
+       
+  })
+  .then(result => {
+    console.log('UPDATED PRODUCT!');
+    res.redirect('/admin/products');
+  })
+  .catch(err => console.log(err));
 };
+
+
+
+
 
 exports.getProducts = (req, res, next) => {
   Product.find()
