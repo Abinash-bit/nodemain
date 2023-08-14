@@ -40,14 +40,8 @@ userSchema.methods.addToCart = function(product) {
                 const updatedCart = {
                   items: updatedCartItems
                 };
-                
-                return db
-                  .collection('users')
-                  .updateOne(
-                    { _id: new ObjectId(this._id) },
-                    { $set: { cart: updatedCart } }
-                  );
-
+                this.cart = updatedCart;
+                return this.save()
 }
 
 module.exports = mongoose.model('User', userSchema);
