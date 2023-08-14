@@ -37,9 +37,14 @@ mongoose
     'mongodb://abinash-bit:Abinash@ac-xuw2vgs-shard-00-00.orm6zuo.mongodb.net:27017,ac-xuw2vgs-shard-00-01.orm6zuo.mongodb.net:27017,ac-xuw2vgs-shard-00-02.orm6zuo.mongodb.net:27017/?ssl=true&replicaSet=atlas-rfsxph-shard-0&authSource=admin&retryWrites=true&w=majority'
   )
   .then(result => {
-    
-
-
+    const user = new User({
+      name: 'Abinash Mahapatra',
+      email: 'abinashmahapatra41@gmail.com',
+      cart: {
+        items: []
+      }
+    })
+    user.save();
     app.listen(3000);
   })
   .catch(err => {
