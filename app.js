@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
-  User.findById('5bab316ce0a7c75f783cb8a8')
+  User.findById()
     .then(user => {
       req.user = user;
       next();
@@ -34,7 +34,7 @@ app.use(errorController.get404);
 
 mongoose
   .connect(
-    'mongodb+srv://maximilian:9u4biljMQc4jjqbe@cluster0-ntrwp.mongodb.net/shop?retryWrites=true'
+    'mongodb://abinash-bit:Abinash@ac-xuw2vgs-shard-00-00.orm6zuo.mongodb.net:27017,ac-xuw2vgs-shard-00-01.orm6zuo.mongodb.net:27017,ac-xuw2vgs-shard-00-02.orm6zuo.mongodb.net:27017/?ssl=true&replicaSet=atlas-rfsxph-shard-0&authSource=admin&retryWrites=true&w=majority'
   )
   .then(result => {
     User.findOne().then(user => {
