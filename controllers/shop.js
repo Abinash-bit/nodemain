@@ -85,7 +85,10 @@ exports.postOrder = (req, res, next) => {
   .populate('cart.items.productId')
   .execPopulate()
   .then(user => {
-    const products = user.cart.items; 
+    const products = user.cart.items;
+    const order = new Order({
+      
+    }) 
   });
  const order = new Order({
   user: {
