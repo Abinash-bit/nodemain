@@ -81,7 +81,18 @@ exports.postCartDeleteProduct = (req, res, next) => {
 };
 
 exports.postOrder = (req, res, next) => {
-  
+  req.user
+  .populate('cart.items.productId')
+  .execPopulate()
+  .then(user => {
+    const products = user.cart.items; 
+  });
+ const order = new Order({
+  user: {
+    name: req.user.name,
+    userId: req.user
+  }
+ });  
   req.user
     .addOrder()
     .then(result => {
