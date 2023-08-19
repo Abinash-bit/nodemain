@@ -87,7 +87,12 @@ exports.postOrder = (req, res, next) => {
   .then(user => {
     const products = user.cart.items;
     const order = new Order({
-      
+      user: {
+        name: req.user.name,
+        userId: req.user
+      },
+      products: 
+
     }) 
   });
  const order = new Order({
