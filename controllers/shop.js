@@ -97,14 +97,13 @@ exports.postOrder = (req, res, next) => {
 
     });
     order.save()
-  });
+  }).then(result => {
+    res.redirect('/orders');
+  })
+  .catch(err => console.log(err));
  
-  req.user
-    .addOrder()
-    .then(result => {
-      res.redirect('/orders');
-    })
-    .catch(err => console.log(err));
+
+
 };
 
 exports.getOrders = (req, res, next) => {
