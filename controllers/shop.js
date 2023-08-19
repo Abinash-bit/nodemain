@@ -96,7 +96,7 @@ exports.postOrder = (req, res, next) => {
       products: products
 
     });
-    order.save()
+    return order.save()
   }).then(result => {
     res.redirect('/orders');
   })
