@@ -1,13 +1,25 @@
 exports.getLogin = (req, res, next) => {
-  console.log(req.get('Cookie').split(';')[1].trim().split('=')[1]);
+  // Check if the 'Cookie' header is present in the request
+  if (req.get('Cookie')) {
+    const cookies = req
+    .get('Cookie')
+    .split(';')
+    .trim()
+    .split('=')[1];
+    if (cookies.length >= 2) {
+      const isLoggedIn = cookies[1].trim().split('=')[1];
+      console.log(isLoggedIn);
+    }
+  }
+
   res.render('auth/login', {
     path: '/login',
     pageTitle: 'Login',
-    isAuthenticated: req.isLoggedIn
+    isAuthenticated: isLoggedIn
   });
 };
 
 exports.postLogin = (req, res, next) => {
-    res.setHeader('Set-Cokkie', 'loggedIn=true' )
-    res.redirect('/');
-  };
+  res.setHeader('Set-Cookie', 'loggedIn=true');
+  res.redirect('/');
+};
