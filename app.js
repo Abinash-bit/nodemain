@@ -36,7 +36,7 @@ app.use(errorController.get404);
 
 mongoose
   .connect(
-    'mongodb://abinash-bit:Abinash@ac-xuw2vgs-shard-00-00.orm6zuo.mongodb.net:27017,ac-xuw2vgs-shard-00-01.orm6zuo.mongodb.net:27017,ac-xuw2vgs-shard-00-02.orm6zuo.mongodb.net:27017/?ssl=true&replicaSet=atlas-rfsxph-shard-0&authSource=admin&retryWrites=true&w=majority'
+    'mongodb+srv://abinash-bit:Abinash@cluster0.orm6zuo.mongodb.net/shop2?retryWrites=true&w=majority'
   )
   .then(result => {
     User.findOne().then(user => {
