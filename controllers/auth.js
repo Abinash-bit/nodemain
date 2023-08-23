@@ -3,7 +3,7 @@ exports.getLogin = (req, res, next) => {
   .get('Cookie')
   .split(';')[0]
   .trim()
-  .split('=')[0] === 'true';
+  .split('=')[0];
   res.render('auth/login', {
     path: '/login',
     pageTitle: 'Login',
@@ -12,6 +12,6 @@ exports.getLogin = (req, res, next) => {
 };
 
 exports.postLogin = (req, res, next) => {
-    res.setHeader('Set-Cookie', 'loggedIn=true' )
+    res.setHeader('Set-Cookie', 'loggedIn=true; HttpOnly')
     res.redirect('/');
   };
