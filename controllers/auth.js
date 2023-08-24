@@ -38,8 +38,12 @@ exports.postSignup = (req, res, next) => {
     if (userDoc) {
       return res.redirect('/signup');
     }
+    const user = new User({
+      
+    })
 
-  }).catch(err => {
+  })
+  .catch(err => {
     console.log(err);
   });
 };
