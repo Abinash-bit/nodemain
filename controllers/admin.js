@@ -102,5 +102,3 @@ exports.postDeleteProduct = (req, res, next) => {
     })
     .catch(err => console.log(err));
 };
-
-// 64da49ce4a5473868b4b014e
