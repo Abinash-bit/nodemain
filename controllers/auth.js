@@ -1,7 +1,14 @@
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport')
 
 const User = require('../models/user');
 
+const transporter = nodemailer.createTransport(sendgridTransport({
+  auth: {
+    api_key: '847A8A8D42E343B4492E66070F6CD91983E52E69CBD5B1792830EBD771BF205AC1936579E9DC42FCA7871B3C4F0942E2'
+  }
+}));
 exports.getLogin = (req, res, next) => {
   let message = req.flash('error');
   if (message.length > 0) {
@@ -82,6 +89,9 @@ exports.postSignup = (req, res, next) => {
           return user.save();
         })
         .then(result => {
+          transporter.sendMail({
+            
+          });          
           res.redirect('/login');
         });
     })
@@ -96,3 +106,4 @@ exports.postLogout = (req, res, next) => {
     res.redirect('/');
   });
 };
+//847A8A8D42E343B4492E66070F6CD91983E52E69CBD5B1792830EBD771BF205AC1936579E9DC42FCA7871B3C4F0942E2
