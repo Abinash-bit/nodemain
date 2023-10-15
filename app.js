@@ -11,7 +11,9 @@ const flash = require('connect-flash');
 const errorController = require('./controllers/error');
 const User = require('./models/user');
 
-const MONGODB_URI = 'mongodb+srv://abinash-bit:Abinash@cluster0.orm6zuo.mongodb.net/test';
+const MONGODB_URI =
+  'mongodb+srv://maximilian:9u4biljMQc4jjqbe@cluster0-ntrwp.mongodb.net/shop';
+
 const app = express();
 const store = new MongoDBStore({
   uri: MONGODB_URI,
@@ -28,12 +30,13 @@ const authRoutes = require('./routes/auth');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({
-  secret: 'my secret', 
-  resave: false, 
-  saveUninitialized: false,
-  store: store
-})
+app.use(
+  session({
+    secret: 'my secret',
+    resave: false,
+    saveUninitialized: false,
+    store: store
+  })
 );
 app.use(csrfProtection);
 app.use(flash());
@@ -55,7 +58,6 @@ app.use((req, res, next) => {
   res.locals.csrfToken = req.csrfToken();
   next();
 });
-
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
